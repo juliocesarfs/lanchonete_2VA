@@ -1,4 +1,6 @@
 #include "libs/Menu.h"
+#include "libs/Command.h"
+
 
 int main() {
 
@@ -12,11 +14,17 @@ int main() {
   Item item3 = new_Item(7, "Salada", 11.2);
   menu_add(menu, item3);
 
-  menu_toPrint(menu);
+  Command command = new_Command();
 
-  menu_remove(menu, item3);
+  command_add(command, menu_getItemByDescription(menu, "Salada"));
+  command_add(command, menu_getItemByDescription(menu, "Arroz"));
+  command_add(command, menu_getItemByDescription(menu, "Cebola"));
 
-  menu_toPrint(menu);
+
+
+  command_toPrint(command);
+
+  //menu_toPrint(menu);
 
   return 0;
 }

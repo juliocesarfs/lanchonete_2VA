@@ -22,6 +22,7 @@ Item new_Item(int id, const char *description, float price) {
 
   item->id = id;
   strcpy(item->description, description);
+  item->price = price;
 
   return item;
 }

@@ -8,6 +8,8 @@
 
 typedef struct MENU *Menu;
 
+int isNullMenu(Menu menu);
+
 Menu new_Menu();
 
 void destruct_Menu(Menu menu);

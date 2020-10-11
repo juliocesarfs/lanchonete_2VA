@@ -7,6 +7,8 @@
 
 typedef struct ITEM *Item;
 
+int isNullItem(Item item);
+
 Item new_Item(int id, const char *description, float price);
 
 void destruct_Item(Item item);

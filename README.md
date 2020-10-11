@@ -1,5 +1,7 @@
 # trabalho-ED02
 
+gcc -o program main.c src/Menu.c src/Item.c
+./program
 
 
 LISTA CARDAPIO {
@@ -13,13 +15,16 @@ ITENS {
   PRICE
 }
 
-FILA DE PESSOAS {
-  PESSOA
+FILA DE CLIENTES {
+  CLIENTE
+}
+
+CLIENTE {
   COMANDA
 }
 
 COMANDA {
-  ITEM CONSUMIDO
+  ITEM
 }
 
 PILHA DE LIVROS {
