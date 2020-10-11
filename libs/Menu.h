@@ -16,9 +16,9 @@ Menu menu_add(Menu menu, Item item);
 
 void menu_remove(Menu menu, Item item);
 
-Menu menu_getItemById(Menu menu, int id);
+Item menu_getItemById(Menu menu, int id);
 
-Menu menu_getItemByDescription(Menu menu, const char* description);
+Item menu_getItemByDescription(Menu menu, const char* description);
 
 void menu_toPrint(Menu menu);
 

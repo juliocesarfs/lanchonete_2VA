@@ -17,4 +17,6 @@ const char* item_getDescription(Item item);
 
 float item_getPrice(Item item);
 
+int item_isEquals(Item item, Item itemCompared);
+
 #endif
