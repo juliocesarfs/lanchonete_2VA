@@ -1,1 +1,27 @@
 # trabalho-ED02
+
+
+
+LISTA CARDAPIO {
+  ITEM
+}
+
+
+ITENS {
+  ID
+  DESCRIPTION
+  PRICE
+}
+
+FILA DE PESSOAS {
+  PESSOA
+  COMANDA
+}
+
+COMANDA {
+  ITEM CONSUMIDO
+}
+
+PILHA DE LIVROS {
+  LIVROS
+}
