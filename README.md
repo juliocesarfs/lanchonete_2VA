@@ -4,27 +4,14 @@ gcc -o program main.c src/Menu.c src/Item.c
 ./program
 
 
-LISTA CARDAPIO {
-  ITEM
-}
-
-
-ITENS {
-  ID
-  DESCRIPTION
-  PRICE
-}
-
 FILA DE CLIENTES {
   CLIENTE
 }
 
 CLIENTE {
   COMANDA
-}
-
-COMANDA {
-  ITEM
+  LIVRO
+  TOTAL PRICE
 }
 
 PILHA DE LIVROS {
