@@ -18,6 +18,7 @@ int main() {
   menu_add(menu, item3);
 
   Client client = new_Client("Julio", 1);
+  listClient_add(listClient, client);
   
   Client client2 = new_Client("Rodrigo", 2);
   listClient_add(listClient, client2);
@@ -36,5 +37,9 @@ int main() {
 
 
   listClient_toPrint(listClient);
+  listClient_remove(listClient);
+
+  listClient_toPrint(listClient);
+
   return 0;
 }

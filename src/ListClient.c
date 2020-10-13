@@ -43,16 +43,24 @@ ListClient listClient_add(ListClient listClient, Client client) {
     return listClient;
   
   ListClient newNode;
-  newNode = (ListClient) malloc(sizeof(struct LIST_CLIENT));
-  newNode->next = listClient->next;
-  listClient->client = client;
-  listClient->next = newNode;
+  ListClient aux = listClient;
 
-  return newNode;
+  newNode = (ListClient) malloc(sizeof(struct LIST_CLIENT));
+  newNode->client = client;
+  newNode->next = NULL;
+
+  while (aux->next != NULL) {
+    aux = aux->next;
+  }
+
+  aux->next = newNode;
+
+
+  return listClient;
 }
 
-void listClient_remove(ListClient listClient, Client client) {
-  if (isNullListClient(listClient) || client == NULL)
+void listClient_remove(ListClient listClient) {
+  if (isNullListClient(listClient))
     return;
   
   ListClient firstElement;

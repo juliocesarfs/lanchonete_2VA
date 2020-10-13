@@ -16,7 +16,7 @@ void destruct_ListClient(ListClient listClient);
 
 ListClient listClient_add(ListClient listClient, Client client);
 
-void listClient_remove(ListClient listClient, Client client);
+void listClient_remove(ListClient listClient);
 
 Client listClient_getClientById(ListClient listClient, int id);
 
