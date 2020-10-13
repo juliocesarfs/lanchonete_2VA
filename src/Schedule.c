@@ -29,6 +29,7 @@ static int OPTIONS() {
     system("clear");
     system("cls");
 
+    printf("==== LANCHONETE DO JULIN ====\n");
     printf("1. Inserir Item no cardápio\n"); //DONE
     printf("2. Inserir Cliente na fila\n"); //DONE
     printf("3. Inserir Livro na pilha\n"); //DONE
@@ -245,15 +246,14 @@ static void insertItemCommand(Client client) {
 
 static void closeClientServed(Client client) {
 
-  char book[40];
   setbuf(stdin, NULL);
 
   clientsServed[indexClientsServed].id = client_getId(client);
   strcpy(clientsServed[indexClientsServed].name, client_getName(client));
   clientsServed[indexClientsServed].totalPrice = client_getTotalPrice(client);
 
-  strcpy(book, bookStack_getBook(bookStack));
-  strcpy(clientsServed[indexClientsServed].book, book);
+  strcpy(clientsServed[indexClientsServed].book, bookStack_getBook(bookStack));
+  bookStack_remove(bookStack);
   
   printf("Conta do %s fechada com sucesso!\n", clientsServed[indexClientsServed].name);
   printf("\nPressione ENTER para continuar...\n");

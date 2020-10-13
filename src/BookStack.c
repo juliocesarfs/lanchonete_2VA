@@ -65,11 +65,7 @@ void bookStack_remove(BookStack bookStack) {
 }
 
 char* bookStack_getBook(BookStack bookStack) {
-
-  char* bookName = strcpy(bookName, bookStack->next->name);
-
-
-  return bookName;
+  return bookStack->next->name;
 }
 
 
