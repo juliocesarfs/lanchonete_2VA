@@ -78,6 +78,7 @@ int client_getId(Client client) {
 
 
 void client_addOrder(Client client, Menu menu, const char* orderName) {
+
   command_add(client->command, menu_getItemByDescription(menu, orderName));
 
   client->totalPrice = command_getTotalPrice(client->command);
@@ -86,6 +87,5 @@ void client_addOrder(Client client, Menu menu, const char* orderName) {
 
 void client_toPrint(Client client) {
 
-  printf("%d - %s - %s - R$ %.2f\n", client_getId(client), client_getName(client), client_getBook(client), client_getTotalPrice(client));
-  command_toPrint(client->command);
+  printf("%d - %s\n", client_getId(client), client_getName(client));
 }

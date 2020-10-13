@@ -20,6 +20,8 @@ void listClient_remove(ListClient listClient);
 
 Client listClient_getClientById(ListClient listClient, int id);
 
+Client listClient_getFirstClient(ListClient listClient);
+
 void listClient_toPrint(ListClient listClient);
 
 #endif

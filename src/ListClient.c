@@ -90,6 +90,14 @@ Client listClient_getClientById(ListClient listClient, int id) {
   return NULL;
 }
 
+Client listClient_getFirstClient(ListClient listClient) {
+
+  if (isNullListClient(listClient))
+    return NULL;
+  
+  return listClient->next->client;
+}
+
 
 void listClient_toPrint(ListClient listClient) {
   ListClient node = listClient->next;

@@ -64,9 +64,14 @@ void bookStack_remove(BookStack bookStack) {
   free(topElement);
 }
 
-char* bookStack_getBookByName(BookStack bookStack) {
-  return bookStack->next->name;
+char* bookStack_getBook(BookStack bookStack) {
+
+  char* bookName = strcpy(bookName, bookStack->next->name);
+
+
+  return bookName;
 }
+
 
 void bookStack_toPrint(BookStack bookStack) {
   BookStack node = bookStack->next;
