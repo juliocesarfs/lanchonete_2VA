@@ -11,13 +11,17 @@
 
 typedef struct CLIENT *Client;
 
-Client new_Client();
+Client new_Client(const char* name, int id);
 
 void destruct_Client(Client client);
 
 Command client_getCommand(Client client);
 
 const char* client_getBook(Client client);
+
+int client_getId(Client client);
+
+char* client_getName(Client client);
 
 float client_getTotalPrice(Client client);
 

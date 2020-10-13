@@ -1,6 +1,8 @@
 #include "../libs/Client.h"
 
 struct CLIENT {
+  int id;
+  char name[40];
   Command command;
   char book[40];
   float totalPrice;
@@ -13,12 +15,15 @@ int isNullClient(Client client) {
   return 0;
 }
 
-Client new_Client() {
+Client new_Client(const char* name, int id) {
   Client client = (Client) malloc(sizeof(struct CLIENT));
 
   if (isNullClient(client))
     return NULL;
   
+
+  strcpy(client->name, name);
+  client->id = id;
   client->command = new_Command();
   strcpy(client->book, "null");
   client->totalPrice = 0;
@@ -57,6 +62,20 @@ float client_getTotalPrice(Client client) {
   return client->totalPrice;
 }
 
+char* client_getName(Client client) {
+  if (isNullClient(client))
+    return 0;
+  
+  return client->name;
+}
+
+int client_getId(Client client) {
+  if (isNullClient(client))
+    return 0;
+  
+  return client->id;
+}
+
 
 void client_addOrder(Client client, Menu menu, const char* orderName) {
   command_add(client->command, menu_getItemByDescription(menu, orderName));
@@ -67,6 +86,6 @@ void client_addOrder(Client client, Menu menu, const char* orderName) {
 
 void client_toPrint(Client client) {
 
-  printf("%s - R$ %.2f\n", client->book, client_getTotalPrice(client));
+  printf("%d - %s - %s - R$ %.2f\n", client_getId(client), client_getName(client), client_getBook(client), client_getTotalPrice(client));
   command_toPrint(client->command);
 }
