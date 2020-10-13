@@ -43,7 +43,7 @@ Command command_add(Command command, Item item) {
     return command;
 
   if (isNullItem(item))
-    return;
+    return NULL;
   
   Command node = command->next;
 

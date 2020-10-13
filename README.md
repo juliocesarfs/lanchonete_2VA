@@ -1,6 +1,6 @@
 # trabalho-ED02
 
-gcc -o program main.c src/Menu.c src/Item.c
+gcc -o program main.c src/BookStack.c src/Item.c src/Menu.c src/Command.c
 ./program
 
 
@@ -12,8 +12,4 @@ CLIENTE {
   COMANDA
   LIVRO
   TOTAL PRICE
-}
-
-PILHA DE LIVROS {
-  LIVROS
 }

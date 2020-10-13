@@ -33,7 +33,10 @@ int main() {
   bookStack = bookStack_add(bookStack, "Julin Livro");
 
   bookStack_toPrint(bookStack);
-  printf("=====================");
+  printf("=====================\n\n");
+  bookStack_remove(bookStack);
+  bookStack_toPrint(bookStack);
+  printf("=====================\n\n");
   bookStack_remove(bookStack);
   bookStack_toPrint(bookStack);
 
