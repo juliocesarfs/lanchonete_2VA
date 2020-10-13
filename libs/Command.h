@@ -22,6 +22,8 @@ Item command_getItemById(Command command, int id);
 
 Item command_getItemByDescription(Command command, const char* description);
 
+float command_getTotalPrice(Command command);
+
 void command_toPrint(Command command);
 
 #endif

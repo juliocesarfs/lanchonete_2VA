@@ -7,9 +7,3 @@ gcc -o program main.c src/BookStack.c src/Item.c src/Menu.c src/Command.c
 FILA DE CLIENTES {
   CLIENTE
 }
-
-CLIENTE {
-  COMANDA
-  LIVRO
-  TOTAL PRICE
-}

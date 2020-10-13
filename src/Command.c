@@ -3,6 +3,7 @@
 struct COMMAND {
   Item item;
   struct COMMAND *next;
+  float totalPrice;
 };
 
 int isNullCommand(Command command) {
@@ -20,6 +21,7 @@ Command new_Command() {
 
   command->item = NULL;
   command->next = NULL;
+  command->totalPrice = 0;
 
   return command;
 }
@@ -53,6 +55,8 @@ Command command_add(Command command, Item item) {
   newNode->next = node;
   command->next = newNode;
 
+
+  command->totalPrice += item_getPrice(item);
   return command;
 }
 
@@ -116,6 +120,14 @@ Item command_getItemByDescription(Command command, const char* description) {
   return NULL;
 }
 
+float command_getTotalPrice(Command command) {
+  if (isNullCommand(command))
+    return 0;
+  
+  return command->totalPrice;
+}
+
+
 void command_toPrint(Command command) {
   Command node = command->next;
 
@@ -128,4 +140,5 @@ void command_toPrint(Command command) {
     printf("%d - %s - %.2f\n", item_getId(node->item), item_getDescription(node->item), item_getPrice(node->item));
     node = node->next;
   }
+  printf("Preco total: %.2f\n", command->totalPrice);
 }
